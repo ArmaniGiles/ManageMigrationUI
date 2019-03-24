@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Migration UI</title>
+
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="material.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+
+
+  <script>
+    window.addEventListener('load', function () {
+
+      console.log('log working')
+      document.querySelectorAll('.card-footer').forEach(function (card) {
+
+        // And add a click event callback to each of them
+        card.addEventListener('click', function () {
+
+          // Select .hidden div inside card
+          var hidden = card.querySelector('.hidden');
+          var hidden_2 = card.querySelector('.hidden_2');
+
+          // Finish the function if not hidden element
+          if (!hidden) {
+            return;
+          }
+
+
+          // If display is .hidden (none)
+          if (hidden.style.display === '' || hidden.style.display === 'none') {
+            // Shows the div (changing from none to block)
+            hidden.style.display = 'block';
+            hidden_2.style.display === 'none';
+          } else {
+            // Hides the div
+            hidden.style.display = '';
+            hidden_2.style.display = 'block';
+          }
+        });
+      });
+
+    })
+  </script>
+
+  <style>
+    .exu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #4C4C4C;
+    }
+
+    .exi {
+      float: left;
+    }
+
+    .exi a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .exi a:hover {
+      background-color: #111;
+    }
+
+    #card-rich-card {
+      /* width:23%;  */
+      width: auto;
+      min-width: 33%;
+      height: auto;
+      min-height: 200px;
+      background-color: #F6F6F6;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .5);
+      /* margin-left:5%; */
+      padding-bottom: 2em;
+      margin-bottom: 50px
+    }
+
+    h4 {
+      padding-left: 7px;
+    }
+
+    .button,
+    .fab {
+      padding: 0;
+    }
+
+
+    @keyframes blinking {
+      0% {
+        color: #ff3d50;
+        /* border: 5px solid #871924; */
+      }
+
+      /* YOU CAN ADD MORE COLORS IN THE KEYFRAMES IF YOU WANT
+    50%{
+      background-color: #55d66b;
+      border: 5px solid #126620;
+    }
+    */
+      100% {
+        color: #222291;
+        /* border: 5px solid #6565f2; */
+      }
+
+    }
+
+    #ERROR {
+      /* width: 300px;
+    height: 300px; */
+      /* NAME | TIME | ITERATION */
+      animation: blinking 1s infinite;
+    }
+
+    @keyframes ONLINE {
+      0% {
+        color: black;
+        /* border: 5px solid #871924; */
+      }
+
+      /* YOU CAN ADD MORE COLORS IN THE KEYFRAMES IF YOU WANT
+    50%{
+      background-color: #55d66b;
+      border: 5px solid #126620;
+    }
+    */
+      100% {
+        color: green;
+        /* border: 5px solid #6565f2; */
+      }
+
+    }
+
+    #ONLINE {
+      /* width: 300px;
+    height: 300px; */
+      /* NAME | TIME | ITERATION */
+      animation: ONLINE 1s infinite;
+    }
+
+    .vl {
+      border-left: 1px solid white;
+      height: 45px;
+    }
+
+    .expandable {
+      background: #fff;
+      overflow: hidden;
+      color: #000;
+      line-height: 50px;
+
+      transition: all .5s ease-in-out;
+      height: 0;
+    }
+
+    .expandable:target {
+      height: 500px;
+    }
+
+    card-footer {
+      height: auto;
+    }
+
+    .floatyright {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="exu">
+    <li class="exi"><a class="active" href="#home">Cloudistics</a></li>
+    <!-- <li class="vl"></li> -->
+    <li class="exi"><a href="#contact">Contact</a></li>
+    <li class="exi"><a href="#about">About</a></li>
+  </ul>
+
+  <div style="padding-left: 7%;padding-right: 7%" class="container">
+    <div style="margin-top:10px" class="row content">
+
+      <div id="card-rich-card" class="card rich-card">
+        <div class="card-footer">
+          <button class="button flat">DASH BOARD</button>
+          <button style="margin-left:1%" class="button flat color-orange-500">Message</button>
+          <!-- <button style="margin-left:1%;color:#A6BDCB" class="button flat">Message</button> -->
+          <button style="margin-left:10%" id="ERROR" class="button flat color-orange-500 "><i
+              class="fa fa-exclamation-circle"></i> Status: ERROR</button>
+        </div>
+        <div class="divider"></div>
+
+        <div class="card-footer">
+          <div>
+            <button href="#nav" style="display:inline;overflow:auto" class="button flat">
+              <div class="hidden_2">VMID# 012317 </div>
+              <div class="hidden  floatyright">
+                <ul>
+                  <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                  <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                  <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                  <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                </ul>
+              </div>
+            </button>
+          </div>
+
+        </div>
+        <div class="divider"></div>
+
+        <div class="card-footer">
+          <button class="button flat">
+            <div>VMID# 992131</div>
+            <div class="hidden floatyright">
+              <ul>
+                <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+              </ul>
+            </div>
+          </button>
+
+          <!-- <button class="button flat color-orange-500">Source Sided</button> -->
+
+
+        </div>
+        <div class="divider"></div>
+
+        <div class="card-footer">
+          <button class="button flat">VMID# 505067</button>
+
+          <button class="button flat color-red-500">Source Sided</button>
+
+        </div>
+        <div class="divider"></div>
+
+        <div class="card-footer">
+          <button class="button flat">Total</button>
+          <button class="button flat">3</button>
+        </div>
+
+      </div>
+
+
+      <div id="card-rich-card" class="card rich-card">
+        <div class="card-footer">
+          <button class="button flat">SERVICE 2</button>
+          <button style="margin-left:1%" class="button flat color-orange-500">Message</button>
+          <button style="margin-left:10%" id="ONLINE" class="button flat color-orange-500 "><i
+              class="fa fa-exclamation-circle"></i> Status: ONLINE</button>
+        </div>
+        <div class="divider"></div>
+        <div class="card-footer">
+          <button class="button flat">
+            <div>VMID# 992131</div>
+            <div class="hidden floatyright">
+              <ul>
+                <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+              </ul>
+            </div>
+          </button>
+        </div>
+        <div class="divider"></div>
+
+        <div class="card-footer">
+          <div>
+            <button href="#nav" style="display:inline;overflow:auto" class="button flat">
+              <div class="hidden_2">VMID# 012317 </div>
+              <div class="hidden  floatyright">
+                <ul>
+                  <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                  <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                  <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                  <li style="list-style:square;color: 	#F99407">Square Bullets</li>
+                </ul>
+              </div>
+            </button>
+          </div>
+
+        </div>
+        <div class="divider"></div>
+
+
+
+
+        <div class="card-footer">
+          <button class="button flat">VMID# 505067</button>
+
+          <button class="button flat color-red-500">Source Sided</button>
+
+        </div>
+        <div class="divider"></div>
+        <div class="card-footer">
+          <button class="button flat">Total</button>
+          <button class="button flat">3</button>
+        </div>
+      </div>
+      <div id="card-rich-card" class="card rich-card">
+        <div class="card-footer">
+          <button class="button flat">MERICS</button>
+          <button style="margin-left:1%" class="button flat color-orange-500">Message</button>
+          <button style="margin-left:10%" id="demo" class="button flat color-orange-500 "><i id="demo"
+              class="fa fa-lock"></i> Status: CONFIGURE</button>
+        </div>
+        <div class="divider"></div>
+        <button class="button flat">XYZ</button>
+
+      </div>
+      <div id="card-rich-card" class="card rich-card">
+        <div class="card-footer">
+          <button class="button flat">WORKER</button>
+          <button style="margin-left:1%" class="button flat color-orange-500">Message</button>
+          <button style="margin-left:10%" id="demo" class="button flat color-orange-500 "><i id="demo"
+              class="fa fa-unlock"></i> Status: UNCONFIGURE</button>
+        </div>
+        <div class="divider"></div>
+        <button class="button flat">XYZ</button>
+
+      </div>
+      <div id="card-rich-card" class="card rich-card">
+        <div class="card-footer">
+          <button class="button flat">WORKER 2</button>
+          <button style="margin-left:1%" class="button flat color-orange-500">Message</button>
+          <button style="margin-left:10%" id="demo" class="button flat color-orange-500 "><i id="demo"
+              class="fa fa-unlock"></i> Status: UNCONFIGURE</button>
+        </div>
+        <div class="divider"></div>
+        <button class="button flat">XYZ</button>
+
+      </div>
+      <div id="card-rich-card" class="card rich-card">
+        <div class="card-footer">
+          <button class="button flat">SERVICE 2</button>
+          <button style="margin-left:25px" class="button flat color-orange-500">Message</button>
+          <button style="margin-left:7%" id="ONLINE" class="button flat color-orange-500 "><i
+              class="fa fa-exclamation-circle"></i> Status: ONLINE</button>
+        </div>
+        <div class="divider"></div>
+        <!-- <button class="button flat">XYZ</button> -->
+
+
+        <div class="card-footer">
+          <button class="button flat">VMID# 012317</button>
+
+        </div>
+        <div class="divider"></div>
+
+        <div class="card-footer">
+          <button class="button flat">VMID# 992131</button>
+
+          <button class="button flat color-orange-500">Source Sided</button>
+
+        </div>
+        <div class="divider"></div>
+
+        <div class="card-footer">
+          <button class="button flat">VMID# 505067</button>
+
+          <button class="button flat color-red-500">Source Sided</button>
+
+        </div>
+        <div class="divider"></div>
+
+        <div class="card-footer">
+          <button class="button flat">Total</button>
+          <button class="button flat">3</button>
+        </div>
+
+      </div>
+      <div id="card-rich-card" class="card rich-card">
+        <div class="card-footer">
+          <button class="button flat">DASH BOARD</button>
+          <button style="margin-left:1%" class="button flat color-orange-500">Message</button>
+          <button style="margin-left:10%" id="ERROR" class="button flat color-orange-500 "><i
+              class="fa fa-exclamation-circle"></i> Status: ERROR</button>
+        </div>
+        <div class="divider"></div>
+        <div class="card-footer">
+          <button class="button flat">XYZ</button>
+        </div>
+        <div class="divider"></div>
+
+        <div style="margin-bottom: 30px;" class="card-footer">
+          <button class="button flat">Total</button>
+          <button class="button flat">3</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
